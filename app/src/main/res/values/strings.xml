@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Henri Potier Book</string>
+    <string name="price_euro">%1$d €</string>
+    <string name="go_to_cart">Go to cart</string>
+
+    <string name="price_total">Total du panier : %1$d €</string>
+    <string name="price_discount">Offre commerciale : %1$d €</string>
+    <string name="price_total_avec_discount">Prix ​​total après remise: %1$d €</string>
+    <string name="ErrorTag">Error</string>
+    <string name="ajouter_au_panier">Vous venez d\'ajouter le livre au panier</string>
+
+    <string name="panier_vide">Pas de livre dans le panier</string>
+</resources>

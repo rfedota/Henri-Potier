@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_empty_chart">200dp</dimen>
+    <dimen name="margin_card_view">10dp</dimen>
+    <dimen name="elevation_card_view">5dp</dimen>
+    <dimen name="corner_radius_card_view">10dp</dimen>
+    <dimen name="margin_box_total">20dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="cover_book_width">150dp</dimen>
+    <dimen name="cover_book_height">200dp</dimen>
+    <dimen name="margin_start">6dp</dimen>
+    <dimen name="margin_top">6dp</dimen>
+    <dimen name="margin_bottom">6dp</dimen>
+    <dimen name="dimen_icon">48dp</dimen>
+    <dimen name="book_price_width">50dp</dimen>
+    <dimen name="width_book_image_tumb">40dp</dimen>
+    <dimen name="dimen_card_view_thumb">100dp</dimen>
+    <dimen name="book_card_view_height">220dp</dimen>
+</resources>
