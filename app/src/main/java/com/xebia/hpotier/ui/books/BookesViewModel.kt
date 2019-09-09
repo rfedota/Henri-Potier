@@ -42,8 +42,7 @@ class BookesViewModel(private val context : Context, private val api: HpotierApi
     }
 
     init {
-       // getBooks()
-
+        // Example Shimmer
         val handler = Handler()
         handler.postDelayed({
             getBooks()
