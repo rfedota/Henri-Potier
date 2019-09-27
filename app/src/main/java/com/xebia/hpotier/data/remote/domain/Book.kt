@@ -2,7 +2,7 @@ package com.xebia.hpotier.data.remote.domain
 
 import com.google.gson.annotations.SerializedName
 
-class Book (
+class Book(
     @SerializedName("isbn") val isbn: String,
     @SerializedName("title") val title: String,
     @SerializedName("price") val price: Int,

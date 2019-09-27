@@ -16,7 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class BooksActivity : BindingActivity<ActivityBooksBinding>() {
 
-    lateinit var vm : BookesViewModel
+    lateinit var vm: BookesViewModel
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_books
@@ -30,7 +30,6 @@ class BooksActivity : BindingActivity<ActivityBooksBinding>() {
         vm.shiowShimmer.observe(this, Observer { animation ->
             shimmerAnimation(animation)
         })
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -48,8 +47,8 @@ class BooksActivity : BindingActivity<ActivityBooksBinding>() {
         }
     }
 
-    fun shimmerAnimation(animation : Boolean){
-        if(animation) {
+    fun shimmerAnimation(animation: Boolean) {
+        if (animation) {
             shimmer_layout.visibility = LinearLayout.VISIBLE
             shimmer_layout.startShimmer()
         } else {

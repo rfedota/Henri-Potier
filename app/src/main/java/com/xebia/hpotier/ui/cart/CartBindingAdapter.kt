@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.xebia.hpotier.data.room.entity.CartBooks
 
-@BindingAdapter(value = ["cart","viewModel"])
+@BindingAdapter(value = ["cart", "viewModel"])
 fun setRepositories(view: RecyclerView, items: List<CartBooks>, vm: CartViewModel) {
     view.adapter?.run {
         if (this is CartAdapter) {

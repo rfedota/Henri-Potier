@@ -14,21 +14,21 @@ import com.xebia.hpotier.extension.with
 import com.xebia.hpotier.util.NotNullMutableLiveData
 import com.xebia.hpotier.util.ioThread
 
-class BookesViewModel(private val context : Context, private val api: HpotierApi, private val dao: CartBookDao) : BaseViewModel() {
+class BookesViewModel(private val context: Context, private val api: HpotierApi, private val dao: CartBookDao) : BaseViewModel() {
 
     private val _items: NotNullMutableLiveData<ArrayList<Book>> = NotNullMutableLiveData(arrayListOf())
     val items: NotNullMutableLiveData<ArrayList<Book>>
         get() = _items
 
     private val _shiowShimmer = NotNullMutableLiveData(true)
-    val shiowShimmer : NotNullMutableLiveData<Boolean>
+    val shiowShimmer: NotNullMutableLiveData<Boolean>
         get() = _shiowShimmer
 
     fun getBooks() {
         addToDisposable(api.getBooks().with()
             .doOnSubscribe { _shiowShimmer.value = true }
             .doOnSuccess { _shiowShimmer.value = false }
-            .doOnError { _shiowShimmer.value = false}
+            .doOnError { _shiowShimmer.value = false }
             .subscribe({
                 _items.value = it
             }, {
@@ -36,7 +36,7 @@ class BookesViewModel(private val context : Context, private val api: HpotierApi
             }))
     }
 
-    fun saveToCart(book : Book) {
+    fun saveToCart(book: Book) {
         Toast.makeText(context, context.getString(R.string.ajouter_au_panier), Toast.LENGTH_LONG).show()
         ioThread { dao.insert(CartBooks.to(book)) }
     }
@@ -47,7 +47,5 @@ class BookesViewModel(private val context : Context, private val api: HpotierApi
         handler.postDelayed({
             getBooks()
         }, 1000)
-
     }
-
 }

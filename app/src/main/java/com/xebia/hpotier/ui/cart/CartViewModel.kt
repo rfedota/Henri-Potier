@@ -35,7 +35,7 @@ class CartViewModel(
     val items: NotNullMutableLiveData<List<CartBooks>>
         get() = _items
 
-    private val _isListItemEmpry : NotNullMutableLiveData<Boolean> = NotNullMutableLiveData(true)
+    private val _isListItemEmpry: NotNullMutableLiveData<Boolean> = NotNullMutableLiveData(true)
     val isListItemEmpry: NotNullMutableLiveData<Boolean>
         get() = _isListItemEmpry
 
@@ -43,18 +43,18 @@ class CartViewModel(
 
     lateinit var listQueryParams: String
 
-    lateinit var offre : CommercialOffers
+    lateinit var offre: CommercialOffers
 
     fun getIsbnCode() {
         addToDisposable(dao.findAllIsbnCode().with().subscribe({
             _itemsIsbn = it
             showHideContainer()
-        },{
+        }, {
             Log.e(context.getString(R.string.ErrorTag), it.message)
         }))
     }
 
-    fun showHideContainer(){
+    fun showHideContainer() {
         if (_itemsIsbn.isEmpty()) {
             _isListItemEmpry.value = true
         } else {
@@ -63,14 +63,14 @@ class CartViewModel(
         }
     }
 
-    fun getParameterCall(){
+    fun getParameterCall() {
         kotlin.run {
             listQueryParams = getQueryParameter()
             getCommercialOffers()
         }
     }
 
-    fun getCommercialOffers(){
+    fun getCommercialOffers() {
         addToDisposable(
             api.commercialOffers(listQueryParams).with().subscribe({
                 offre = it
@@ -95,11 +95,10 @@ class CartViewModel(
     fun getMaxOffre() {
         kotlin.run {
             _totalePrice.value = CalculesUtils.calculeTotal(_items.value)
-            _discount.value = CalculesUtils.calculateMaxOffre(_totalePrice.value , offre.offers)
+            _discount.value = CalculesUtils.calculateMaxOffre(_totalePrice.value, offre.offers)
             _totalPriceDiscount.value = CalculesUtils.calculeTotalDiscount(_totalePrice.value, _discount.value)
         }
     }
-
 
     fun deleteToCart(book: CartBooks) {
         ioThread {

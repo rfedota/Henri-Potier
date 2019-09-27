@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.xebia.hpotier.data.remote.domain.Book
 import com.xebia.hpotier.data.room.AppDatabase.Companion.DB_VERSION
 import com.xebia.hpotier.data.room.dao.CartBookDao
 import com.xebia.hpotier.data.room.entity.CartBooks
@@ -33,7 +32,6 @@ abstract class AppDatabase : RoomDatabase() {
 
         private val MIGRATION_1_TO_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
-
             }
         }
     }

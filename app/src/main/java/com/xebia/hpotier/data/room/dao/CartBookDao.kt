@@ -18,5 +18,4 @@ interface CartBookDao {
 
     @Delete
     fun delete(books: CartBooks)
-
 }

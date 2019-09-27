@@ -8,7 +8,7 @@ import com.xebia.hpotier.ui.BindingActivity
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class CartActivity : BindingActivity<ActivityCartBinding>() {
-    lateinit var mv : CartViewModel
+    lateinit var mv: CartViewModel
 
     @LayoutRes
     override fun getLayoutResId() = R.layout.activity_cart

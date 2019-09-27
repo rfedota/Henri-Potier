@@ -5,7 +5,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.xebia.hpotier.data.remote.domain.Book
 
-
 @Entity(tableName = "CartBooks")
 data class CartBooks(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

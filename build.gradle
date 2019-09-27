@@ -1,6 +1,7 @@
 buildscript {
     apply from: 'versions.gradle'
     addRepos(repositories)
+
     dependencies {
         classpath deps.android_gradle_plugin
         classpath deps.kotlin.plugin
@@ -8,11 +9,17 @@ buildscript {
 
     repositories {
         google()
+        jcenter()
     }
+}
+
+plugins {
+    id "org.jlleitschuh.gradle.ktlint" version "7.1.0"
 }
 
 allprojects {
     addRepos(repositories)
+    apply plugin: "org.jlleitschuh.gradle.ktlint"
 }
 
 task clean(type: Delete) {
